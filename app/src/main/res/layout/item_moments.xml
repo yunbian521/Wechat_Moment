@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:padding="16dp"
+    android:background="#FFFFFF"
+    android:layout_marginBottom="8dp">
+
+    <!-- 1. 头像（居左） -->
+    <ImageView
+        android:id="@+id/iv_avatar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/avatar_mine"
+        android:layout_marginEnd="12dp"/>
+
+    <!-- 2. 内容区域（居右） -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <!-- 2.1 用户名 + 右上角“···”按钮 -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="我的昵称"
+                android:textSize="16sp"
+                android:textColor="#222222"
+                android:textStyle="bold"/>
+
+
+        </RelativeLayout>
+
+        <!-- 2.2 朋友圈文字内容 -->
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="这是朋友圈内容..."
+            android:textSize="15sp"
+            android:textColor="#333333"/>
+
+        <!-- 2.3 照片列表 -->
+        <LinearLayout
+            android:id="@+id/ll_images"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            android:gravity="start">
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_more"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:contentDescription="更多操作"
+            android:src="@drawable/two_point"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="0dp"
+            android:layout_marginStart="300dp"/>
+        <!-- 2.4 点赞栏（爱心 + 用户名列表） -->
+        <LinearLayout
+            android:id="@+id/ll_like_bar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            android:gravity="center_vertical"> <!-- 默认隐藏，有点赞时显示 -->
+
+            <!-- 爱心图标 -->
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_like_selected"
+                android:contentDescription="点赞"/>
+
+            <!-- 点赞用户名列表 -->
+            <TextView
+                android:id="@+id/tv_like_users"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="秋菊, 黄升虎, 小丽"
+                android:textSize="12sp"
+                android:textColor="#888888"/>
+            <!-- 右上角“···”按钮 -->
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

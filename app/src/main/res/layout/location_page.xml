@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- 顶部标题栏 -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="#BCBCBC"
+        android:elevation="4dp">
+
+        <!-- 返回按钮 -->
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/return_ico"
+            android:padding="4dp"
+            android:layout_marginTop="30dp"/>
+
+        <!-- 标题 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="140dp"
+            android:text="所在位置"
+            android:textSize="18sp"
+            android:textColor="#222222"
+            android:layout_marginTop="30dp"/>
+        <TextView
+            android:id="@+id/tv_current_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="正在获取当前位置..."
+            android:textSize="12sp"
+            android:padding="8dp"
+            android:background="#BCBCBC"
+            android:layout_marginTop="30dp"/>
+    </com.google.android.material.appbar.MaterialToolbar>
+
+    <!-- 位置列表 -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_location_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F5F5F5"/>
+
+</LinearLayout>
